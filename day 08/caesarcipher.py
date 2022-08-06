@@ -1,0 +1,46 @@
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+#   =''
+state = True
+while (state):
+    word='' 
+    text = input('place your text here  :').lower()
+    func = input('what function you want enc or dec ?').lower()
+    hash = int(input('what is hash :'))
+    # if hash was more than len of alphabet it will get out of index error 
+    hash = hash % len(alphabet)
+    def ceser(text,func,hash):
+        global word
+        if func =='enc':
+            for ch in text :
+                # if user added something else than alphabet it will added to word no matter what it was symbol or number
+                if ch in alphabet:   
+                    alphaplace = alphabet.index(ch)
+                    if hash+alphaplace >= len(alphabet) :
+                        word+=alphabet[hash+alphaplace - len(alphabet)]
+                    else:
+                         word+=alphabet[alphaplace+hash]
+                else:
+                    word+=ch
+        else:
+            for ch in text:
+                if ch in alphabet:
+                    alphaindex = alphabet.index(ch)
+                    word+=alphabet[alphaindex - hash]
+                else:
+                    word+=ch
+        return word
+
+    print(ceser(text=text,func=func,hash=hash))
+    # the while loop keep asking user if they want to do it again
+    quest=True
+    while(quest):
+        textstate=input('do you want to start again Y/n ? ').lower()
+        if textstate =='n' or textstate =='no':
+            state = False
+            quest=False
+            print('good bye')
+        if textstate =='' or textstate=='Y' or  textstate=='yes':
+            quest=False
+        else:
+            print('try again')
+            
