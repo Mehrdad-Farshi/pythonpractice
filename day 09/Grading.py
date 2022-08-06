@@ -30,35 +30,3 @@ for key in student_scores:
         student_grades[key]= 'Fail'    
 # 🚨 Don't change the code below 👇
 print(student_grades)
-
-
-
-coming={
-    'mehrgan':'miad',
-    'mehrdad':'nemiad',
-    'alireza':'miad',
-    'amirreza':'nemiad'
-}
-
-melicode={
-    '0440684404':{
-        'name':'mehrdad',
-        'lastname':'farshi',
-        'phonenumber':'09202774361'
-    },
-    '0332645532':{
-        'name':'mehrgan',
-        'lastname':'rad',
-        'phonenumber':'09122442313'
-        
-    }
-}
-
-travel_log={
-    'iran':{
-        'cities_visited':['tehran','mashhad','ardebil'],
-    },
-    'England':{
-        'cities_visited':['london','leeds','yorkshire'],
-    },
-}
