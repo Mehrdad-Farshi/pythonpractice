@@ -2,10 +2,12 @@ alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n'
 #   =''
 state = True
 while (state):
-    word=''
+    word='' 
     text = input('place your text here  :').lower()
     func = input('what function you want enc or dec ?').lower()
     hash = int(input('what is hash :'))
+    # if hash was more than len of alphabet it will get out of index error 
+    hash = hash % len(alphabet)
     def ceser(text,func,hash):
         global word
         if func =='enc':
