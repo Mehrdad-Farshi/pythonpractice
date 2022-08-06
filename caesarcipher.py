@@ -10,15 +10,22 @@ while (state):
         global word
         if func =='enc':
             for ch in text :
-                alphaplace = alphabet.index(ch)
-                if hash+alphaplace >= len(alphabet) :
-                    word+=alphabet[hash+alphaplace - len(alphabet)]
+                # if user added something else than alphabet it will added to word no matter what it was symbol or number
+                if ch in alphabet:   
+                    alphaplace = alphabet.index(ch)
+                    if hash+alphaplace >= len(alphabet) :
+                        word+=alphabet[hash+alphaplace - len(alphabet)]
+                    else:
+                         word+=alphabet[alphaplace+hash]
                 else:
-                   word+=alphabet[alphaplace+hash]
+                    word+=ch
         else:
             for ch in text:
-                alphaindex = alphabet.index(ch)
-                word+=alphabet[alphaindex - hash]
+                if ch in alphabet:
+                    alphaindex = alphabet.index(ch)
+                    word+=alphabet[alphaindex - hash]
+                else:
+                    word+=ch
         return word
 
     print(ceser(text=text,func=func,hash=hash))
