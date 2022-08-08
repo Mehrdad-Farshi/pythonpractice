@@ -39,7 +39,6 @@ print(f'player has {pCards} cards with point of {pScore}')
 if input('do you take an other card or not  y or n') =='y':
     pScore+=take_a_card
 else:
-    
 
 
 
