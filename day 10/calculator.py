@@ -39,8 +39,8 @@ def calculator():
         state= input('are you wish to continue ? y or n : ') 
         if state == 'n' :
             # calc_continue = False
-            break
             calculator()
+            break
         else:
             for symb in opration :
                 print (symb)
